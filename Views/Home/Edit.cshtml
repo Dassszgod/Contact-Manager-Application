@@ -1,0 +1,92 @@
+﻿@model ContactManagerApp.Models.User
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<head>
+	<meta content="charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #1B1B1B;
+            font-family: "DM Sans", sans-serif;
+        }
+        .form-control {
+            background-color: #20232A;
+            color: #7FCFFF;
+        }
+        .form-control:focus {
+                background-color: #20232A;
+            color: #7FCFFF;
+        }
+        label, h1 {
+            color: #7FCFFF;
+        }
+
+        .uploadBut {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            width: 120px;
+            height: 45px;
+            color: #1B1B1B;
+            background-color: #7FCFFF;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border: 0px;
+        }
+
+        .uploadBut:active {
+            transition: 0s;
+            background-color: #1B1B1B;
+            color: #7FCFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center" style="margin-top: 200px;">
+        <h1 class="display-4">Edit User</h1>
+    </div>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateOfBirth"></label>
+            <input asp-for="DateOfBirth" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Married"></label>
+            <select asp-for="Married" class="form-control">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Salary"></label>
+            <input asp-for="Salary" class="form-control" required />
+        </div>
+
+        <button type="submit" class="uploadBut" style="margin-top: 20px;">Save Changes</button>
+    </form>
+</body>
