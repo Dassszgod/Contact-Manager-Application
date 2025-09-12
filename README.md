@@ -9,8 +9,8 @@ Microsoft.EntityFrameworkCore.Tools
 To setup database: 1) Create db in mssql
 2) In settings json in connection string type down your server and db name
 3) In package manager console in vs: 
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+1) dotnet ef migrations add InitialCreate
+2) dotnet ef database update
 
 Screenshots:
 
